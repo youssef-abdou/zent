@@ -1,0 +1,418 @@
+/* Variables Design Zen Moderne */
+:root {
+    --bg-white: #FFFFFF;
+    --bg-beige: #F9F6F0;
+    --color-gray: #E2E8F0;
+    --color-blue: #6A8EAE;
+    --color-blue-dark: #4A6E8E;
+    --text-dark: #1E293B;
+    --text-light: #475569;
+    --font-main: 'Outfit', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--color-blue);
+    color: var(--bg-white);
+    box-shadow: 0 4px 15px rgba(106, 142, 174, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 142, 174, 0.4);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1EBE5D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Animations */
+.fade-in {
+    /* Hidden initially only if JS adds a class to the body */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SECTION 1 - Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(249, 246, 240, 0.7) 100%), url('https://images.unsplash.com/photo-1549315964-1c6e115e5ec0?auto=format&fit=crop&q=80') center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-phone {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-blue);
+}
+
+/* SECTION 2 - Trust Block */
+.trust-block {
+    background-color: var(--bg-white);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.trust-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.trust-item i {
+    color: var(--color-blue);
+    font-size: 1.2rem;
+}
+
+/* SECTION 3 - Commitments */
+.commitments {
+    background-color: var(--bg-beige);
+}
+
+.commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--color-blue);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* SECTION 4 & 5 - Text Content Blocks */
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.content-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-text p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.content-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-blue);
+}
+
+.icon-box span {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.content-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* SECTION 6 - Form */
+.booking-section {
+    background-color: var(--bg-beige);
+}
+
+.booking-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--color-gray);
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #FAFAFA;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-blue);
+    background-color: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(106, 142, 174, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* SECTION 7 - Final CTA */
+.cta-final {
+    background-color: var(--color-blue);
+    color: var(--bg-white);
+    text-align: center;
+}
+
+.cta-final .section-title {
+    color: var(--bg-white);
+}
+
+.cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-final .btn-primary {
+    background-color: var(--bg-white);
+    color: var(--color-blue);
+}
+
+.cta-final .btn-primary:hover {
+    background-color: var(--bg-beige);
+}
+
+/* SECTION 8 - Footer */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--bg-white);
+    padding: 60px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--bg-beige);
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #94A3B8;
+    transition: var(--transition);
+}
+
+.footer ul li a:hover {
+    color: var(--bg-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #94A3B8;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .content-section { flex-direction: column; }
+    .content-section.reverse { flex-direction: column; }
+    .booking-form { padding: 30px 20px; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; }
+}
